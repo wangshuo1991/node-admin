@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
                 age: 27,
                 gender: 0,
                 from: 'HeNan',
-                job: 'man'
+                position: 'man'
             }
         ]
     });
