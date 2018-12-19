@@ -1,0 +1,26 @@
+{
+  "name": "node-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangshuo1991/node-admin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangshuo1991/node-admin/issues"
+  },
+  "homepage": "https://github.com/wangshuo1991/node-admin#readme",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "bootstrap": "^3.3.6",
+    "express": "^4.16.4",
+    "express-art-template": "^1.0.1"
+  }
+}
