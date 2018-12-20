@@ -74,7 +74,7 @@
           </div>
 
           <h2 class="sub-header">Section title</h2>
-          <a class="btn btn-primary" href="/students/new">添加新成员</a>
+          <a class="btn btn-primary" href="">添加新成员</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -89,7 +89,7 @@
                 </tr>
               </thead>
               <tbody>
-                {{ each students }} 
+                {{ each members }} 
                 <tr>
                   <td>{{ $value.id }}</td>
                   <td>{{ $value.name }}</td>
@@ -98,8 +98,8 @@
                   <td>{{ $value.from }}</td>
                   <td>{{ $value.position }}</td>
                   <td>
-                    <a href="/students/edit?id={{ $value.id }}" class="btn btn-sm btn-success ">编辑</a>
-                    <a href="/students/delete?id={{ $value.id }}" class="btn btn-sm btn-danger">删除</a>
+                    <a href="" class="btn btn-sm btn-success ">编辑</a>
+                    <a href="" class="btn btn-sm btn-danger">删除</a>
                   </td>
                 </tr>
                 {{ /each }} 

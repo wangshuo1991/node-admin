@@ -19,6 +19,7 @@
   "homepage": "https://github.com/wangshuo1991/node-admin#readme",
   "dependencies": {
     "art-template": "^4.13.2",
+    "body-parser": "^1.18.3",
     "bootstrap": "^3.3.6",
     "express": "^4.16.4",
     "express-art-template": "^1.0.1"
