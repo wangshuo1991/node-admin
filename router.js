@@ -21,7 +21,7 @@ router.get('/',(req,res)=>{
 
 // 渲染 新成员的页面
 router.get('/members/add',(req,res)=>{
-    res.render('edit.html');
+    res.render('add.html');
 });
 
 // 添加新成员
