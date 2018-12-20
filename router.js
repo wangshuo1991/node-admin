@@ -20,7 +20,7 @@ router.get('/',(req,res)=>{
 });
 
 // 渲染 新成员的页面
-router.get('/members/add',(req,res)=>{
+router.get('/members/add',(req,res)=>{  
     res.render('add.html');
 });
 
