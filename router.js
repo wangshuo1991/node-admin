@@ -39,7 +39,24 @@ router.post('/members/add',(req,res)=>{
 
 })
 
+// 编辑页面
 
+router.get('/members/edit',(req,res)=>{
+
+    let id = req.query.id;
+    outerMethods.findByIndex (id,(err,result)=>{
+        if (err) {
+            return res.status(500).send('server error');
+        }
+        console.log(result);
+        res.render('edit.html',{
+            member: result
+        });
+    
+
+    });
+        
+});
 
 
 

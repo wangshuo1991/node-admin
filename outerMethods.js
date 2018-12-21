@@ -35,3 +35,22 @@ exports.add = (member,callback)=>{
     });
 }
 
+// 点击编辑页面 通过id获取这条数据
+
+exports.findByIndex = (id,callback)=>{
+
+    fs.readFile(dbPath,'utf8',(err,data)=>{
+        if (err) {
+            return callback(err)
+        }
+        //callback(null,JSON.parse(data).members);
+        id = parseInt(id);
+        let members = JSON.parse(data).members;
+        let result = members.find(item=>{
+            return item.id === id;
+        });
+
+        callback(null,result);
+    });
+
+}
