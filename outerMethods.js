@@ -93,3 +93,39 @@ exports.save = (member,callback)=>{
 
 
 }
+
+
+// 完成删除
+
+exports.delete = (id,callback)=>{
+    id = parseInt(id);
+
+    fs.readFile(dbPath,'utf8',(err,data)=>{
+        if (err) {
+            return callback(err)
+        }
+        //callback(null,JSON.parse(data).members);
+
+        let ary = JSON.parse(data).members;
+
+        // 注意删除的时候 不能用 splice 
+        let members = ary.filter(item=>{
+            return item.id !== id;
+        });
+
+        let fileData = JSON.stringify({
+            members: members
+        });
+
+        fs.writeFile('./db.json',fileData,(err)=>{
+            if (err) {
+                return callback(err);
+            }
+
+            callback(null);
+        });
+    });
+
+       
+};
+

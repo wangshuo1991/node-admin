@@ -60,7 +60,6 @@ router.get('/members/edit',(req,res)=>{
 router.post('/members/edit',(req,res)=>{
 
     let member = req.body;
-    console.log(member);
     outerMethods.save(member,(err)=>{
         if (err) {
             return res.status(500).send('server error');
@@ -70,6 +69,20 @@ router.post('/members/edit',(req,res)=>{
 
 });
 
+
+// 删除数据
+
+router.get('/members/delete',(req,res)=>{
+
+    let id = req.query.id;
+
+    outerMethods.delete (id,(err)=>{
+        if (err) {
+            return res.status(500).send('server error');
+        }
+        res.redirect('/');
+    });
+});
 
 
 // 记得导出路由
