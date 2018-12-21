@@ -48,14 +48,26 @@ router.get('/members/edit',(req,res)=>{
         if (err) {
             return res.status(500).send('server error');
         }
-        console.log(result);
         res.render('edit.html',{
             member: result
         });
-    
-
     });
-        
+
+});
+
+//  确认编辑 提交编辑
+
+router.post('/members/edit',(req,res)=>{
+
+    let member = req.body;
+    console.log(member);
+    outerMethods.save(member,(err)=>{
+        if (err) {
+            return res.status(500).send('server error');
+        }
+        res.redirect('/');
+    });
+
 });
 
 

@@ -54,3 +54,42 @@ exports.findByIndex = (id,callback)=>{
     });
 
 }
+
+// 保存编辑 
+
+exports.save = (member,callback)=>{
+
+    fs.readFile(dbPath,'utf8',(err,data)=>{
+        if (err) {
+            return callback(err)
+        }
+        //callback(null,JSON.parse(data).members);
+
+        let members = JSON.parse(data).members;
+        member.id = parseInt(member.id);
+        let result = members.find(item=>{
+            return item.id === member.id;
+        });
+
+        // 改变result 这个取出来的内容
+        for (const key in result) {
+            if (result.hasOwnProperty(key)) {
+                result[key]=member[key];
+            }
+        }
+
+        let fileData = JSON.stringify({
+            members: members
+        });
+
+        fs.writeFile('./db.json',fileData,(err)=>{
+            if (err) {
+                return callback(err);
+            }
+
+            callback(null);
+        });
+    });
+
+
+}
