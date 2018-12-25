@@ -30,9 +30,9 @@
 
   ```
   
-  ### node中mongoose数据库的使用
+### node中mongoose数据库的使用
   
-  - 设计schema 发布model
+- 设计schema 发布model
   
     ```javascript
     
