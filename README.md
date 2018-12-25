@@ -29,4 +29,32 @@
     });
 
   ```
+  
+  ### node中mongoose数据库的使用
+  
+  - 设计schema 发布model
+  
+    ```javascript
+    
+        const mongoose = require('mongoose')
+        
+        // 链接数据库
+        mongoose.connect('mongodb://localhost/users')
+        
+        // 创建 schema
+        const Schema = mongoose.Schema
+        
+        // 设计schema 
+        let dataSchema = new Schema({
+            name: {
+                type: String
+            },
+            age: {
+                type: Number
+            }
+        })
+        
+        // 发布 model
+        module.exports = moongoose.model('data',dataSchema)
+    ```
 
