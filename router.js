@@ -25,12 +25,11 @@ router.get('/members/add',(req,res)=>{
 });
 
 // 添加新成员
-
 router.post('/members/add',(req,res)=>{
 
     let content = req.body;
     
-    outerMethods.add(content,(err)=>{
+    new outerMethods(content).save((err)=>{
         if (err) {
             return res.status(500).send('server error');
         }
@@ -43,8 +42,8 @@ router.post('/members/add',(req,res)=>{
 
 router.get('/members/edit',(req,res)=>{
 
-    let id = req.query.id;
-    outerMethods.findByIndex (id,(err,result)=>{
+    let id = req.query.id.replace(/"/g,'');
+    outerMethods.findById(id,(err,result)=>{
         if (err) {
             return res.status(500).send('server error');
         }
@@ -60,7 +59,8 @@ router.get('/members/edit',(req,res)=>{
 router.post('/members/edit',(req,res)=>{
 
     let member = req.body;
-    outerMethods.save(member,(err)=>{
+    let id = req.body.id.replace(/"/g,'');
+    outerMethods.findByIdAndUpdate(id,member,(err)=>{
         if (err) {
             return res.status(500).send('server error');
         }
@@ -74,9 +74,9 @@ router.post('/members/edit',(req,res)=>{
 
 router.get('/members/delete',(req,res)=>{
 
-    let id = req.query.id;
+    let id = req.query.id.replace(/"/g,'');
 
-    outerMethods.delete (id,(err)=>{
+    outerMethods.findByIdAndRemove (id,(err)=>{
         if (err) {
             return res.status(500).send('server error');
         }

@@ -1,1 +1,10 @@
-{"members":[{"id":3,"name":"李靖","age":41,"gender":0,"from":"四川","position":"镇南将军"}]}
+{
+    "members": [{
+        "id": 3,
+        "name": "李靖",
+        "age": 41,
+        "gender": 0,
+        "from": "四川",
+        "position": "镇南将军"
+    }]
+}

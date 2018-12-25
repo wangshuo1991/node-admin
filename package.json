@@ -22,6 +22,7 @@
     "body-parser": "^1.18.3",
     "bootstrap": "^3.3.6",
     "express": "^4.16.4",
-    "express-art-template": "^1.0.1"
+    "express-art-template": "^1.0.1",
+    "mongoose": "^5.4.0"
   }
 }
