@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const path = require('path');
 // 引入路由
 const router = require('./router');
 
@@ -15,8 +15,8 @@ app.use(bodyParser.json());
 app.engine('html', require('express-art-template'));
 
 // 静态资源
-app.use('/public/',express.static('./public/'));
-app.use('/node_modules/',express.static('./node_modules/'));
+app.use('/public/',express.static(path.join(__dirname,'./public/')));
+app.use('/node_modules/',express.static(path.join(__dirname,'./node_modules/')));
 
 // 挂载路由
 app.use(router);
