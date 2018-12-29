@@ -21,6 +21,14 @@ app.use('/node_modules/',express.static(path.join(__dirname,'./node_modules/')))
 // 挂载路由
 app.use(router);
 
+// 全局 报错中间件
+app.use((err,req,res,next)=>{
+    res.status(500).json({
+        err_code: 500,
+        message: err.message
+    });
+});
+
 app.listen(2020,()=>{
     console.log('server is running on port 2020');
 });
